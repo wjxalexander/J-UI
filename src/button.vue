@@ -43,7 +43,8 @@ export default {
     };
   },
   methods: {
-    changeState() {
+    changeState(e) {
+      this.$emit('click',e)
       if (this.loadingfunc === true) {
         this.loading = !this.loading;
         this.currenstate = !this.currenstate;
