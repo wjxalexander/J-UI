@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jwang ui frame</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    :root {
+      --button-height: 32px;
+      --font-size: 10px;
+      --button-bg: white;
+      --button-active-bg: #eee;
+      --border-radius: 4px;
+      --color: #333;
+      --border-color: #999;
+      --border-color-hover: #666;
+    }
+
+    .buttondemo .buttons {
+      display: flex;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app" style="padding:10px;">
+    <div class="tabsdemo">
+        <j-tab currenttab='finace' direction='vertical'>
+            <j-tabnav >
+              <j-tabitem name=finace title="财经">Tab1</j-tabitem>
+              <j-tabitem name=sport title="体育">Tab2</j-tabitem>
+              <j-tabitem name=education title="教育">Tab3</j-tabitem>
+            </j-tabnav>
+            <j-tabbody>
+              <j-tabpannel name=finace> 财经内容</j-tabpannel>
+              <j-tabpannel name=sport> 体育内容</j-tabpannel>
+              <j-tabpannel name=education> 教育内容</j-tabpannel>
+            </j-tabbody>
+          </j-tab>
+      <j-tab currenttab='education'>
+        <j-tabnav >
+          <j-tabitem name=finace title="财经">Tab1</j-tabitem>
+          <j-tabitem name=sport title="体育">Tab2</j-tabitem>
+          <j-tabitem name=education title="教育">Tab3</j-tabitem>
+        </j-tabnav>
+        <j-tabbody>
+          <j-tabpannel name=finace> 财经内容</j-tabpannel>
+          <j-tabpannel name=sport> 体育内容</j-tabpannel>
+          <j-tabpannel name=education> 教育内容</j-tabpannel>
+        </j-tabbody>
+      </j-tab>
+      
+    </div>
+
+
+
+
+    <!-- <div id="app" style="padding:10px;">
+    <div class="buttondemo" style="margin: 10px 0">
+      <div class="buttons" style="margin: 10px 0">
+        <j-button> Normal </j-button>
+        <j-button :loadingfunc=true> Load button </j-button>
+        <j-button :disabled=true> Disabled </j-button>
+  </div>
+
+    <j-buttongroup>
+      <j-button> Previous </j-button>
+      <j-button> Next </j-button>
+    </j-buttongroup>
+  </div> -->
+
+
+
+
+
+
+    <!-- <div class="tabsdemo">
+            <j-tab>
+                <j-tabnav >
+                    <j-tabitem 
+                    v-for="tab in tabs"
+                    v-bind:key="tab"
+                    v-bind:class="[{ active: currentTab === tab }]"
+                    v-on:click="currentTab = tab"
+                    :currenttab='tab'>
+                    {{ tab }}
+                    </j-tabitem>
+                </j-tabnav>
+                <component
+                v-bind:is="currentTabComponent"
+                class="tab"
+                style="padding:10px"
+              ></component>
+            </j-tab>  -->
+
+    <!-- <div class="input">
+            <j-input v-model="message"></j-input>
+            <p style="font-size:0.8em">message is {{message}}</p>
+            <j-input value="Required field" :error='showErro()'></j-input>
+            <j-input value="Disabled" :disabled=true></j-input>
+            <j-input value="readonly" :readonly=true></j-input>
+        </div>
+        <div class="buttondemo" style="margin: 10px 0">
+            <div class="buttons" style="margin: 10px 0">
+                <j-button> Normal </j-button>
+                <j-button> Normal </j-button>
+                <j-button :loadingfunc=true> Normal </j-button>
+                <j-button :disabled=true> Disabled </j-button>
+            </div>
+
+            <j-buttongroup>
+                <j-button> Normal </j-button>
+                <j-button> Normal </j-button>
+            </j-buttongroup>
+        </div> -->
+
+  </div>
+  <script src="./src/app.js"></script>
+</body>
+
+</html>
