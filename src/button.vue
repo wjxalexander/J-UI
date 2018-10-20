@@ -6,7 +6,6 @@
           <j-icon class="icon loading"  name = 'loading'></j-icon>
           <span>Loading</span>
         </div>
-
       </template>
   </button>
 </template>

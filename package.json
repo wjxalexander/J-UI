@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "npx parcel index.html --no-cache",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "keywords": [
     "usedbyVue"
@@ -18,9 +20,13 @@
   },
   "devDependencies": {
     "@vue/component-compiler-utils": "^2.2.0",
+    "node-sass": "^4.9.4",
     "parcel-bundler": "^1.10.2",
     "sass": "^1.14.1",
-    "vue-template-compiler": "^2.5.17"
+    "sass-loader": "^7.1.0",
+    "velocity-animate": "^1.5.2",
+    "vue-template-compiler": "^2.5.17",
+    "vuepress": "^1.0.0-alpha.13"
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.common.js"
