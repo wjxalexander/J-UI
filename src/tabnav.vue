@@ -1,5 +1,5 @@
 <template>
-<div class="tabs-nav" :class="itempositionmethod">
+<div class="tabs-nav" :class="itempositionmethod" ref="nav">
     <slot></slot>
     <div class="line" ref = 'line'></div>
 </div>
@@ -16,15 +16,15 @@ export default {
   inject: ["eventBus"],
   created() {},
   mounted() {
-    const offsetX = this.$el.offsetLeft;
-    const offsetY = this.$el.offsetTop;
     this.eventBus.$on("update:selected", (name, item, direction) => {
       this.direction = direction;
       if (this.direction === "flat") {
+        let offsetX = this.$refs.nav.getBoundingClientRect().left;
         let { left, right } = item.$el.getBoundingClientRect();
         this.$refs.line.style.left = `${left - offsetX}px`;
         this.$refs.line.style.right = `${right}px`;
       } else if (this.direction === "vertical") {
+        let offsetY = this.$refs.nav.getBoundingClientRect().top;
         let { top, bottom } = item.$el.getBoundingClientRect();
         this.$refs.line.style.top = `${top - offsetY}px`;
         this.$refs.line.style.bottom = `${bottom}px`;
@@ -54,7 +54,7 @@ $border-color: #e9e9f0;
     & .line {
       position: absolute;
       top: 0;
-      height: 30px;
+      height: 36px;
       display: inline-block;
       border: 1px solid $active-color;
       transition: all 300ms;
@@ -65,7 +65,7 @@ $border-color: #e9e9f0;
     & .line {
       position: absolute;
       bottom: 0;
-      width: 47px;
+      width: 41.67px;
       display: inline-block;
       border: 1px solid $active-color;
       transition: all 300ms;

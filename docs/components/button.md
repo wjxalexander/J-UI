@@ -12,3 +12,7 @@ sidebarDepth: 2
 <ClientOnly> 
   <button-demo class='demo'></button-demo>
 </ClientOnly> 
+
+### Attributes/属性
+1. loadingfunc: 是否加载中状态（Boolean） 当此属性为true时，点击按钮，按钮进入加载状态，同时变成不可点击
+2. disabled: 是否禁用状态(boolean) 当此属性为true时，按钮变成不可点击

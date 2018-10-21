@@ -7,11 +7,7 @@
       <j-collapse>
         <template slot='title' > 查看代码 </template>
         <template slot='body'> 
-          <pre>
-            <code>
-              {{this.code}}
-            </code>
-          </pre>
+          <pre><code>{{this.code}}</code></pre>
         </template>
       </j-collapse>
     </div>
@@ -31,7 +27,7 @@ export default {
         <j-button> Normal </j-button>
         <j-button :loadingfunc=true> Load button </j-button>
         <j-button :disabled=true> Disabled </j-button>
-          `
+          `.replace(/\t+| |/g,'').trim()
     };
   }
 };

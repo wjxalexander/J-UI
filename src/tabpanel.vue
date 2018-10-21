@@ -1,6 +1,6 @@
 <template>
   <div class="tabpanel" v-if="shownOnScreen" :class="classes">
-    <slot name='content'><slot>  
+    <slot name='content'></slot>  
   </div>  
 </template>
 <script>
@@ -40,6 +40,7 @@ export default {
 .tabpanel{
   &.active{
     padding: 1em;
+    transition: all 300ms;
   }
 }
 </style>

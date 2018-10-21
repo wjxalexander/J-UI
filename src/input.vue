@@ -1,6 +1,6 @@
 <template>
 <div class="j-input" :class="{'error':error}">
-  <input type="text" :class="{'error':error}" :value="value" :disabled='disabled' :readonly='readonly'
+  <input type="text" :class="{'error':error}" :value="value" :disabled='disabled' :readonly='readonly' :placeholder="placeholder"
   @change="$emit('change',$event.target.value)"
   @focus="$emit('focus',$event.target.value)"
   @input="$emit('input',$event.target.value)"
@@ -39,13 +39,16 @@ export default {
     },
     error: {
       type: String
+    },
+    placeholder: {
+      type: String
     }
   }
 };
 </script>
 <style lang="scss" scoped>
 $font-size: 14px;
-$box-focus-color:#7fc4fd;
+$box-focus-color: #7fc4fd;
 $border-color: #bce0fd;
 $error-color: #ff6565;
 $disabled-color: #838296;
@@ -55,27 +58,32 @@ $input-color: #2699fb;
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
-  margin: 0.5em 0.5em;
+  margin: 0.5em 0;
   > input {
     color: $input-color;
-    height: 28px;
+    height: 1em;
+    width: 20em;
     border: 0.5px solid $border-color;
-    padding: 1em 10px;
+    padding: 1em 0.8em;
     font-size: 10px;
     outline: none;
     &:focus {
-    border: 0.5px solid $box-focus-color;
-  }
+      border: 0.5px solid $box-focus-color;
+    }
     &:active {
-    border: 0.5px solid $box-focus-color;
-  }
-    &.error{
+      border: 0.5px solid $box-focus-color;
+    }
+    &.error {
       border-color: $error-color;
     }
-    &[disabled]{
+    &[disabled] {
       cursor: not-allowed;
-      color: #FFF;
+      color: #fff;
       background-color: $disabled-color;
+    }
+    &::placeholder {
+      color: $input-color;
+      opacity: 0.5;
     }
   }
   > .icon {
@@ -92,8 +100,6 @@ $input-color: #2699fb;
     font-size: 0.6em;
     color: $error-color;
   }
-  
-
 }
 </style>
 

@@ -8,7 +8,7 @@ title: UI 设计稿
 ![Button组件](http://pguri3ko9.bkt.clouddn.com/Button.png "Button组件")
 ## Input组件
 ![Input组件](http://pguri3ko9.bkt.clouddn.com/input.png "Input组件")
-## Toast组件
+## Tabs组件
 ![Tab组件](http://pguri3ko9.bkt.clouddn.com/tab.png "Tab组件")
 ## Toast组件
 ![Toast组件](http://pguri3ko9.bkt.clouddn.com/Toast.png "Toast组件")

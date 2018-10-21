@@ -8,7 +8,6 @@
       <slot name='body'></slot>
     </div>
     </transition>
-
     </div>  
 </template>
 <script>
@@ -26,14 +25,11 @@ export default {
   methods: {
     showOnpanel() {
       this.visible = !this.visible;
-      console.log(this.$refs.body);
     },
     
   },
   mounted() {
-    setTimeout(() => {
-      console.log(this.$refs.body);
-    }, 1000);
+    
   },
   computed: {}
 };
@@ -44,13 +40,11 @@ $content-padding: 10px;
     width: 100%;
 }
 .titlewrap {
-  padding: $content-padding;
   cursor: pointer;
   color: #3b86ff;
 }
 .bodywrap {
   transition: all 1s;
-  padding: $content-padding;
 }
 .slide-enter-active,
 .slide-leave-active {

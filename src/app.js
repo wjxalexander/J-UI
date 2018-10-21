@@ -11,6 +11,9 @@ import Tabbody from './tabbody'
 import Plugin from './plugin'
 import Popover from './popover'
 import Collapse from './collapse'
+import Carousel from './carousel'
+import Carouselitem from './carouselitem'
+import Carouselcontrol from './carouselcontrol'
 
 Vue.component('j-button', Button)
 Vue.component('j-buttongroup', Groupbutton)
@@ -23,12 +26,16 @@ Vue.component('j-tabpannel',Tabpanel)
 Vue.component('j-tabbody',Tabbody)
 Vue.component('j-popover', Popover)
 Vue.component('j-collapse',Collapse)
+Vue.component('j-carousel',Carousel)
+Vue.component('j-carouselitem',Carouselitem)
+Vue.component('j-carouselcontrol',Carouselcontrol)
 Vue.use(Plugin)//
 new Vue({
     el: '#app',
     data:{
         message: '',
         currentTab:'education',
+        selectdot: 1,
     },
     created(){
     },
