@@ -50,10 +50,10 @@ export default {
 
 <style lang="scss" scoped>
 $active-color: #3B86FF;
-$default-color:#E9E9F0;
+$default-color: rgba(0, 0, 0, 0.65);
 .tabs-item {
   color: $default-color;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
   flex-shrink: 0;
   padding: 0.5em 0.5em;

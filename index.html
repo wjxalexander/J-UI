@@ -26,7 +26,11 @@
     .carousel h3{
       color:#fff;
     }
- 
+ .demoCol{
+  border: 1px solid #ccc;
+    background: #eee;
+    height: 50px;
+ }
   </style>
 </head>
 
@@ -57,7 +61,68 @@
         </template>
       </j-carousel>
     </div>
+ <div class="toastdemo">
+      <j-button @click='showToast("middle")'>click mid</j-button>
+      <j-button @click='showToast("top")'>click top</j-button>
+      <j-button @click='showToast("bottom")'>click bot</j-button>
+    </div>
 
+
+    <div class="grid">
+      <j-row>
+      <j-col span="8">
+        <div class="demoCol">8</div>
+      </j-col>
+      <j-col span="8">
+        <div class="demoCol">8</div>
+      </j-col>
+      <j-col span="8">
+        <div class="demoCol">8</div>
+      </j-col>
+    </j-row>
+    <j-row>
+        <j-col span="6">
+          <div class="demoCol">8</div>
+        </j-col>
+        <j-col span="6">
+          <div class="demoCol">8</div>
+        </j-col>
+        <j-col span="6">
+          <div class="demoCol">8</div>
+        </j-col>
+        <j-col span="6">
+            <div class="demoCol">8</div>
+          </j-col>
+      </j-row>
+      <j-row>
+          <j-col span="2">
+            <div class="demoCol">8</div>
+          </j-col>
+          <j-col span="4">
+            <div class="demoCol">8</div>
+          </j-col>
+          <j-col span="6">
+            <div class="demoCol">8</div>
+          </j-col>
+          <j-col span="12">
+              <div class="demoCol">8</div>
+            </j-col>
+        </j-row>
+        <j-row gutter='10'>
+            <j-col span="6">
+              <div class="demoCol">8</div>
+            </j-col>
+            <j-col span="6">
+              <div class="demoCol">8</div>
+            </j-col>
+            <j-col span="6">
+              <div class="demoCol">8</div>
+            </j-col>
+            <j-col span="6">
+                <div class="demoCol">8</div>
+              </j-col>
+          </j-row>
+      </div>
     <!-- <div class="popoverdemo" style="display:inline-flex">
       <j-popover position='left'>
         <template slot = "content">

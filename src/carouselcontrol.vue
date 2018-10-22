@@ -21,7 +21,7 @@ export default {
   },
   inject: ["eventBus"],
   created() {
-    this.eventBus.$on("update:selected", (selectdot, vm) => {
+    this.eventBus.$on("update:selected", (selectdot, vm) => {//点亮选择bar
       if (selectdot === this.dataid) {
         this.active = true;
       } else {
@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     onClick() {
-      this.eventBus.$emit("update:selected", this.dataid, this);
+      this.eventBus.$emit("update:selected", this.dataid, this);//单项数据流
     }
   }
 };

@@ -13,10 +13,13 @@ module.exports = {
         collapsable: true,
         children: [
           '/components/button',
+          '/components/carousel',
+          '/components/grid',
           '/components/input',
           '/components/popover',
           '/components/tabs',
           '/components/toast',
+          
         ]
       },
     ]

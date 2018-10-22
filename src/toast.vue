@@ -1,5 +1,5 @@
 <template>
-<div class="aligncenter" :class="toastClasses">
+<div class="toastctn" :class="toastClasses">
   <div class="toast" ref="wrapper" >
     <div class="message">
       <slot v-if="!enableHtml"></slot>
@@ -67,11 +67,11 @@ export default {
   methods: {
     updateLineStyle() {
       if (this.position === "top" || this.position === "bottom") {
-        console.log(this.position)
+        console.log(this.position);
         this.$refs.line.style.height = `${
           this.$refs.wrapper.getBoundingClientRect().height
         }px`;
-      }else{
+      } else {
         this.$refs.line.style.width = `${
           this.$refs.wrapper.getBoundingClientRect().width
         }px`;
@@ -135,23 +135,24 @@ $toast-bg: rgba(59, 134, 255, 1);
     opacity: 1;
   }
 }
-.aligncenter {
+.toastctn {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
   $animation-duration: 300ms;
+  z-index: 100;
   &.position-top {
     top: 0;
     .toast {
-      animation: sildedown $animation-duration;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
+      animation: sildedown $animation-duration;
     }
     .line {
-    height: 100%;
-    border-left: 1px solid #fff;
-    margin-left: 16px;
-  }
+      height: 100%;
+      border-left: 1px solid #fff;
+      margin-left: 16px;
+    }
   }
   &.position-bottom {
     bottom: 0;
@@ -161,10 +162,10 @@ $toast-bg: rgba(59, 134, 255, 1);
       border-bottom-right-radius: 0;
     }
     .line {
-    height: 100%;
-    border-left: 1px solid #fff;
-    margin-left: 16px;
-  }
+      height: 100%;
+      border-left: 1px solid #fff;
+      margin-left: 16px;
+    }
   }
   &.position-middle {
     top: 50%;
@@ -176,15 +177,15 @@ $toast-bg: rgba(59, 134, 255, 1);
       justify-content: center;
       animation: fadein $animation-duration;
     }
-     .line {
-       height: 100%;
-    border-top: 1px solid #fff;
-  }
-  .close {
-    cursor: pointer;
-    padding: 3px;
-    flex-shrink: 0;
-  }
+    .line {
+      height: 100%;
+      border-top: 1px solid #fff;
+    }
+    .close {
+      cursor: pointer;
+      padding: 3px;
+      flex-shrink: 0;
+    }
   }
 }
 .toast {
@@ -205,6 +206,5 @@ $toast-bg: rgba(59, 134, 255, 1);
     padding-left: 16px;
     flex-shrink: 0;
   }
-  
 }
 </style>

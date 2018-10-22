@@ -37,7 +37,7 @@
 </div>
 </template>
 <script>
-import Tab from ".../../../src/tab";
+import Tab from "../../../src/tab";
 import TabNav from "../../../src/tabnav";
 import Tabitem from "../../../src/tabitem";
 import Tabpanel from "../../../src/tabpanel";

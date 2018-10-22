@@ -48,7 +48,7 @@ export default {
       });
     }
     this.$refs.ctn.style.width = `${this.containerWidth}px`;
-    this.eventBus.$on("update:itemposition",(selectdot,value)=>{
+    this.eventBus.$on("update:itemposition",(selectdot,value)=>{//监听选择的板，控制CSS
       let{left} = this.$refs.ctn.getBoundingClientRect();
       this.$refs.ctn.style.left =  `${left - value}px`
       this.currentindex = selectdot;

@@ -103,30 +103,6 @@ export default {
       document.removeEventListener("click", this.onClickDocument); //必须remove 否则会产生无数个listener
     }
   }
-
-  //   xx() {
-  //     this.visible = !this.visible;
-  //     if (this.visible === true) {
-  //       //没有nexttickvisible会瞬间切换。点外面关闭pop over
-  //       this.$nextTick(() => {
-  //         //父元素有overflow：hidden解决办法：
-  //         document.body.appendChild(this.$refs.contentwrap)
-
-  //         let popdialog = this.$refs.contentwrap
-  //         let{top, right, bottom, left} = this.$refs.trigger.getBoundingClientRect()
-  //         popdialog.style.top = `${top}px`;
-  //         popdialog.style.left = `${left}px`;
-
-  //         let eventHadler = ()=>{
-  //           this.visible = false
-  //           document.removeEventListener('click',eventHadler)//必须remove 否则会产生无数个listener
-  //         }
-  //         document.addEventListener("click", eventHadler);
-  //       });
-  //     }
-  //   },
-
-  // }
 };
 </script>
 <style lang="scss" scoped>

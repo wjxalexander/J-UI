@@ -14,6 +14,9 @@ import Collapse from './collapse'
 import Carousel from './carousel'
 import Carouselitem from './carouselitem'
 import Carouselcontrol from './carouselcontrol'
+import Col from './col'
+import Row from './row'
+
 
 Vue.component('j-button', Button)
 Vue.component('j-buttongroup', Groupbutton)
@@ -29,6 +32,9 @@ Vue.component('j-collapse',Collapse)
 Vue.component('j-carousel',Carousel)
 Vue.component('j-carouselitem',Carouselitem)
 Vue.component('j-carouselcontrol',Carouselcontrol)
+Vue.component('j-col',Col)
+Vue.component('j-row',Row)
+
 Vue.use(Plugin)//
 new Vue({
     el: '#app',
