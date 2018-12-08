@@ -47,10 +47,13 @@ export default {
         }
       });
     }
+    //初始化
     this.$refs.ctn.style.width = `${this.containerWidth}px`;
+    this.$refs.ctn.style.left =   `0px`
+
     this.eventBus.$on("update:itemposition",(selectdot,value)=>{//监听选择的板，控制CSS
-      let{left} = this.$refs.ctn.getBoundingClientRect();
-      this.$refs.ctn.style.left =  `${left - value}px`
+      let{left} = this.$refs.ctn.getBoundingClientRect()||0;
+      this.$refs.ctn.style.left =  `${left - value}px`|| `0px`
       this.currentindex = selectdot;
     })
   },

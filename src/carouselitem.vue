@@ -22,7 +22,7 @@ export default {
     this.eventBus.$on("update:selected", (selectdot, vm) => {
       if (selectdot === this.dataid) {
         this.active = true;
-        let {left} = this.$el.getBoundingClientRect()
+        let {left} = this.$el.getBoundingClientRect()||0
         this.eventBus.$emit("update:itemposition",selectdot,left)//将选中的left的属性发布上去
       } else {
         this.active = false;

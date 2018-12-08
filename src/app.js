@@ -16,7 +16,7 @@ import Carouselitem from './carouselitem'
 import Carouselcontrol from './carouselcontrol'
 import Col from './col'
 import Row from './row'
-
+import Switch from './switch'
 
 Vue.component('j-button', Button)
 Vue.component('j-buttongroup', Groupbutton)
@@ -34,6 +34,7 @@ Vue.component('j-carouselitem',Carouselitem)
 Vue.component('j-carouselcontrol',Carouselcontrol)
 Vue.component('j-col',Col)
 Vue.component('j-row',Row)
+Vue.component('j-switch',Switch)
 
 Vue.use(Plugin)//
 new Vue({
