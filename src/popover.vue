@@ -9,7 +9,7 @@
   </span>
 </div>
 </template>
-// slot 是不接受class click refs 等属性的
+//slot 是不接受class click refs 等属性的
  
 <script>
 export default {

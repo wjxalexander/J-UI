@@ -1,5 +1,5 @@
 <template>
-  <div class="tabs-item" @click="onClick" :class="classes" >
+  <div ref = 'item' class="tabs-item" @click="onClick" :class="classes" >
     <slot></slot>
   </div>
 </template>
@@ -19,7 +19,7 @@ export default {
     };
   },
   inject: ["eventBus"],
-  created() {
+  mounted(){
     this.eventBus.$on("update:selected", (name, item, direction) => {
       this.direction = direction
       if (name === this.name) {
@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     onClick() {
-      this.eventBus.$emit("update:selected", this.name,this, this.direction);
+      this.eventBus.$emit("update:selected", this.name,this, this.direction);//传入this
     }
   },
   computed: {

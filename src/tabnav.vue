@@ -14,18 +14,22 @@ export default {
     };
   },
   inject: ["eventBus"],
-  created() {},
+  created() {
+ 
+  },
   mounted() {
     this.eventBus.$on("update:selected", (name, item, direction) => {
       this.direction = direction;
       if (this.direction === "flat") {
         let offsetX = this.$refs.nav.getBoundingClientRect().left;
-        let { left, right } = item.$el.getBoundingClientRect();
+        let { left, right,width } = item.$el.getBoundingClientRect();
+        this.$refs.line.style.width = `${width}px`
         this.$refs.line.style.left = `${left - offsetX}px`;
         this.$refs.line.style.right = `${right}px`;
       } else if (this.direction === "vertical") {
         let offsetY = this.$refs.nav.getBoundingClientRect().top;
-        let { top, bottom } = item.$el.getBoundingClientRect();
+        let { top, bottom, height } = item.$el.getBoundingClientRect();
+        this.$refs.line.style.height = `${height}px`
         this.$refs.line.style.top = `${top - offsetY}px`;
         this.$refs.line.style.bottom = `${bottom}px`;
       }
@@ -54,7 +58,6 @@ $border-color: #e9e9f0;
     & .line {
       position: absolute;
       top: 0;
-      height: 36px;
       display: inline-block;
       border: 1px solid $active-color;
       transition: all 300ms;
@@ -65,7 +68,6 @@ $border-color: #e9e9f0;
     & .line {
       position: absolute;
       bottom: 0;
-      width: 41.67px;
       display: inline-block;
       border: 1px solid $active-color;
       transition: all 300ms;
