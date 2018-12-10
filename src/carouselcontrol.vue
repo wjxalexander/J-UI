@@ -1,5 +1,7 @@
 <template>
-  <li class='carouselcontrol' @click="onClick" :class="classes"></li>
+<div class="carouselcontrolarea">
+   <li v-for="n in totalnum" :dataid='n' class='carouselcontrol' @click="onClick($event)" :class="classes"></li>
+</div>
 </template>
 <script>
 import Icon from "./icon";
@@ -9,27 +11,36 @@ export default {
     "j-icon": Icon
   },
   props: {
-    dataid: {
+    totalnum: {
       type: Number,
       required: true
-    }
+    },
   },
   data() {
     return {
-      active: false
+      active: false,
+      dataid: 0
     };
   },
   inject: ["eventBus"],
   created() {
-    this.eventBus.$on("update:selected", (selectdot, vm) => {//点亮选择bar
+   
+  },
+  mounted() {
+     this.eventBus.$on("update:selected", (selectdot, vm) => {//点亮选择bar
       if (selectdot === this.dataid) {
-        this.active = true;
-      } else {
-        this.active = false;
+        for(let i = 0; i<this.$el.children.length;i++){
+          if(parseInt(this.dataid)===parseInt(this.$el.children[i].getAttribute('dataid'))){
+            this.$el.children[i].classList.add('active')
+          }
+          else {
+       this.$el.children[i].classList.remove('active')
       }
+        }
+        //this.active = true;
+      } 
     });
   },
-  mounted() {},
   computed: {
     classes() {
       return {
@@ -38,14 +49,22 @@ export default {
     }
   },
   methods: {
-    onClick() {
+    onClick(e) {
+    let targetId= parseInt(e.target.getAttribute('dataid'))//获取目标dataid
+    this.dataid = targetId
       this.eventBus.$emit("update:selected", this.dataid, this);//单项数据流
+       console.log(this.dataid)
+        console.log(this.$el.children[0].getAttribute('dataid'))
+          console.log()
+
     }
+    
   }
 };
 </script>
 <style lang="scss" scoped>
-.carouselcontrol {
+
+  .carouselcontrol {
   display: inline-block;
   width: 16px;
   height: 4px;
@@ -59,6 +78,10 @@ export default {
   &.active {
   opacity: 1;
   width: 24px;    
-  }
+  
 }
+}
+  
+
+
 </style>
