@@ -3,12 +3,7 @@
     <div class="container" ref="ctn">
       <slot name="content"></slot>
     </div>
-    <span class="iconctr left">
-      <j-icon class="icon left" name="left"></j-icon>
-    </span>
-    <span class="iconctr right">
-      <j-icon class="icon right" name="right"></j-icon>
-    </span>
+    
     <div class="carouselctr" ref="ctr">
       <slot name="ctr"></slot>
     </div>
@@ -86,43 +81,20 @@ export default {
   }
   & .container {
     position: absolute;
-    transition: all 300ms;
+    transition: all 500ms;
+    display: flex;
+    align-items: center;
+    justify-content: center
   }
-  & .iconctr {
-    position: absolute;
-    display: table-cell;
-    height: 36px;
-    width: 36px;
-    cursor: pointer;
-    z-index: 10;
-    top: 50%;
-    transform: translate(0, -50%);
-    display: none;
-    & .icon {
-      height: 40px;
-      width: 40px;
-      fill: #fff;
-    }
-    &.left {
-      left: 10px;
-    }
-    &.right {
-      right: 10px;
-    }
-  }
+
   & .carouselctr {
-    position: absolute;
+    position: relative;
     z-index: 1;
-    bottom: 10px;
     width: 100%;
+    height: 100%;
     font-size: 0;
     text-align: center;
   }
-  &:hover {
-    & .iconctr {
-      display: block;
-      transition: all 300ms;
-    }
-  }
+
 }
 </style>
