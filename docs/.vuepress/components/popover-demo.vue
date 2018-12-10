@@ -1,6 +1,5 @@
 <template>
 <div>
-
   <div class="popoverdemo" style="display:inline-flex">
       <j-popover position='left'>
         <template slot = "content">
