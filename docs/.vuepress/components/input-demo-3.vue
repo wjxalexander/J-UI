@@ -1,16 +1,16 @@
 <template>
-<div class="inpuedemo">
-  <j-input v-model="message"></j-input>
-  <p style="font-size:0.8em">message is: {{message}}</p>
-  <div class="collapsedemo">
+  <div class="inpuedemo">
+    <j-input v-model="message"></j-input>
+    <p style="font-size:0.8em">message is: {{message}}</p>
+    <div class="collapsedemo">
       <j-collapse>
-        <template slot='title' > 查看代码 </template>
-        <template slot='body'> 
+        <template slot="title">查看代码</template>
+        <template slot="body">
           <pre><code>{{this.code}}</code></pre>
         </template>
       </j-collapse>
     </div>
-</div>
+  </div>
 </template>
 <script>
 import Input from "../../../src/input";

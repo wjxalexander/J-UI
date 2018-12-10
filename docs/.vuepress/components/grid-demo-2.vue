@@ -1,23 +1,23 @@
 <template>
-   <div class="grid">
-        <j-row gutter='10'>
-            <j-col span="6">
-              <div class="demoCol">6</div>
-            </j-col>
-            <j-col span="6">
-              <div class="demoCol">6</div>
-            </j-col>
-            <j-col span="6">
-              <div class="demoCol">6</div>
-            </j-col>
-            <j-col span="6">
-                <div class="demoCol">6</div>
-              </j-col>
-          </j-row>
+  <div class="grid">
+    <j-row gutter="10">
+      <j-col span="6">
+        <div class="demoCol">6</div>
+      </j-col>
+      <j-col span="6">
+        <div class="demoCol">6</div>
+      </j-col>
+      <j-col span="6">
+        <div class="demoCol">6</div>
+      </j-col>
+      <j-col span="6">
+        <div class="demoCol">6</div>
+      </j-col>
+    </j-row>
     <div class="collapsedemo">
       <j-collapse>
-        <template slot='title' > 查看代码 </template>
-        <template slot='body'> 
+        <template slot="title">查看代码</template>
+        <template slot="body">
           <pre><code>{{this.code}}</code></pre>
         </template>
       </j-collapse>
@@ -68,7 +68,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.grid{
+.grid {
   margin: 20px 0;
 }
 .demoCol {
