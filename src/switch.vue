@@ -1,6 +1,6 @@
 <template>
 <div class="switch">
-    <label>
+    <label class="clearfix">
       <input type="checkbox" id="switchbox" name="horns" v-model="checksts" :checked="checksts">
       <span class="switchbackground" :class="{'ischecked':checksts}"></span>
     </label>
@@ -24,6 +24,11 @@ $switch-border-active-color: #409eff;
 $switch-background-active-color:#409eff;
 $switch-container-height: 20px;
 $switch-button-background: #fff;
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
 .switch{
     #switchbox{
         position: absolute;
@@ -41,7 +46,7 @@ $switch-button-background: #fff;
        height: $switch-container-height;
        position: relative;
     &.ischecked{
-        border-radius: $switch-border-active-color;
+        border-color: $switch-border-active-color;
         background-color: $switch-background-active-color
     }
     &::after{
@@ -59,6 +64,11 @@ $switch-button-background: #fff;
         left: 100%;
         margin-left: -17px
     }
+    }
+    & .clearfix::after {
+      content: "";
+      display: block;
+      clear: both;
     }
     }
 </style>
