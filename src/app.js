@@ -17,6 +17,7 @@ import Carouselcontrol from './carouselcontrol'
 import Col from './col'
 import Row from './row'
 import Switch from './switch'
+import Pagination from './Pagination'
 
 Vue.component('j-button', Button)
 Vue.component('j-buttongroup', Groupbutton)
@@ -35,7 +36,7 @@ Vue.component('j-carouselcontrol',Carouselcontrol)
 Vue.component('j-col',Col)
 Vue.component('j-row',Row)
 Vue.component('j-switch',Switch)
-
+Vue.component('j-pagination',Pagination)
 Vue.use(Plugin)//
 new Vue({
     el: '#app',
