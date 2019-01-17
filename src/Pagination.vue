@@ -41,16 +41,15 @@ export default {
     }
   },
   methods: {
-    choosePage(value,index) {
-        
+    choosePage(value, index) {
       if (value !== "...") {
         this.currentPage = value;
-      }else{
-          if(index===1){
-              this.currentPage-=5
-          }else{
-              this.currentPage+=5
-          }
+      } else {
+        if (index === 1) {
+          this.currentPage -= 5;
+        } else {
+          this.currentPage += 5;
+        }
       }
     },
     isActive(value) {
@@ -105,6 +104,11 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .pagination {
   $border-color: #d9d9d9;
   $height: 32px;
@@ -122,7 +126,7 @@ export default {
 
   & .icon {
     height: $height;
-    width: 32px;
+    width: $height;
     @include border-style;
     &:hover {
       fill: $active-color;
@@ -132,13 +136,15 @@ export default {
   }
   & ul {
     display: flex;
+    margin: 0;
+    padding: 0;
   }
   & li {
     list-style: none;
     display: inline-block;
     font-size: 14px;
     text-align: center;
-    padding: 7px 7px;
+    padding: 3px 7px;
     height: $height;
     min-width: $height;
     @include border-style;

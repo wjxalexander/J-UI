@@ -16,6 +16,7 @@ module.exports = {
           '/components/carousel',
           '/components/grid',
           '/components/input',
+          '/components/pagination',
           '/components/popover',
           '/components/switch',
           '/components/tabs',
